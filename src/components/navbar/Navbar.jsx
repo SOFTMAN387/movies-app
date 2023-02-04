@@ -27,8 +27,8 @@ const Navbar = () => {
                      </select>
                      </li>
 
-                 <li><Link to="/about">About</Link></li>
-                 <li><Link to="/contact">Contact</Link></li>
+                 <li><Link to="/movie/top_rated">TopRated</Link></li>
+                 <li><Link to="/movie/upcoming">Upcoming</Link></li>
 
              </ul>
 
