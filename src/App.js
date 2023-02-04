@@ -9,9 +9,8 @@ function App() {
      <Home />
       <Routes>
         <Route exact path="/" element={<h1>helo</h1>} />
-        <Route exact path="/movie/:id" element={<h1>helo</h1>} />
-        <Route exact path="/movie/:typ" element={<MovieList />} />
-        <Route exact path="/movie/:upcoming" element={<h1>helo</h1>} />
+        {/* <Route exact path="/movie/:id" element={<h1>helo</h1>} /> */}
+        <Route exact path="/movies/:category" element={<MovieList />} />
         <Route exact path="/*" element={<h1>Error Page</h1>} />
       </Routes>
        

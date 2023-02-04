@@ -17,18 +17,8 @@ const Navbar = () => {
              <ul className="menu-items">
                  <li><Link to="/">Home</Link></li>
                  <li><Link to="/user/order">Your Favourite</Link></li>
-                 <li>
-                     <select>
-                         <option >Categories</option>
-                         <option value="sofa">Popular</option>
-                         <option value="chair">TopRated</option>
-                         <option value="bed">Upcoming</option>
-                         <option value="all">All--</option>
-                     </select>
-                     </li>
-
-                 <li><Link to="/movie/top_rated">TopRated</Link></li>
-                 <li><Link to="/movie/upcoming">Upcoming</Link></li>
+                 <li><Link to="/movies/top_rated">TopRated</Link></li>
+                 <li><Link to="/movies/upcoming">Upcoming</Link></li>
 
              </ul>
 
