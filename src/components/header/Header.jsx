@@ -12,11 +12,11 @@ const Header = () => {
           <Link to="/register"><button className="topButton">Register</button></Link>
           <Link to="/login"> <button className="topButton">Login</button></Link>
           {/* <Link to="/login"> <i className='fa fa-user text-dark mr-2'></i></Link> */}
-           
+         
           </div>
-
+         
         </div>
-
+      
       </div>
    </>
   )

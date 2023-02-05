@@ -2,6 +2,8 @@ import React,{useEffect,useState} from 'react';
 import MovieCard from '../moviecard/MovieCard';
 import "./movielist.css";
 import { useParams } from 'react-router-dom';
+// import Header from '../header/Header';
+// import Navbar from '../navbar/Navbar';
 //import axios from "axios";
 const MovieList = () => {
   const [movieList,setMovieList]=useState([]);
@@ -27,6 +29,8 @@ const MovieList = () => {
 
   return (
     <>
+    {/* <Header />
+    <Navbar /> */}
       <div className='movie_list'>
         <h2 className='list_title'>{(category?category:"POPULAR").toUpperCase()}</h2><br />
         <div className='list_cards'>

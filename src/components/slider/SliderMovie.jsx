@@ -30,7 +30,7 @@ const PopularMovie = () => {
             {
                 popularMovies.map((movie,index)=>{
                     return(<>
-                     <Link key={index} style={{textDecoration:"none",color:"white"}} to={`/movie/${movie.id}`}>
+                     <Link key={index} className="slider-link" style={{textDecoration:"none",color:"white"}} to={`/movie/${movie.id}`}>
                        <div className='posterImage'>
                         <img src={`https://image.tmdb.org/t/p/original${movie && movie.backdrop_path}`} alt="Poster_Img"/>
                        </div>

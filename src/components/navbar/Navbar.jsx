@@ -2,30 +2,22 @@ import React from 'react'
 import "./navbar.css";
 import { Link } from 'react-router-dom';
 const Navbar = () => {
-  return (
-  <>
-      <nav className="navbar">
-         
-         <div className="navbar-container container">
-        
-             <input type="checkbox" className='chk-box' />
-             <div className="hamburger-lines">
-                 <span className="line line1"></span>
-                 <span className="line line2"></span>
-                 <span className="line line3"></span>
-             </div>
-             <ul className="menu-items">
-                 <li><Link to="/">Home</Link></li>
-                 <li><Link to="/user/order">Your Favourite</Link></li>
-                 <li><Link to="/movies/top_rated">TopRated</Link></li>
-                 <li><Link to="/movies/upcoming">Upcoming</Link></li>
-
-             </ul>
-
-         </div>
-     </nav>
-  </>
-  )
+   
+    return (
+        <>
+        <div className="btn-group">
+            <button type="button" className="btn  dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Category
+            </button>
+            <div className="dropdown-menu ">
+              <Link className="dropdown-item" to="/movies/top_rated">TopRated</Link>
+              <Link className="dropdown-item" to="/movies/upcoming">UpComing</Link>
+              <Link className="dropdown-item" to="/movies/popular">Popular</Link>
+              
+            </div>
+        </div>
+        </>
+    )
 }
 
 export default Navbar;
