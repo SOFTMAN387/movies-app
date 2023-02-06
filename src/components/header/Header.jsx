@@ -6,6 +6,8 @@ import { actions } from '../../redux/Store';
 const Header = () => {
   const dispatch=useDispatch();
  const loginData=useSelector((state)=>state.currentUser) ;
+ const favLen=useSelector((state)=>state.favourite.length) ;
+ //console.log(favLen);
 //  console.log(loginData.length);
 const singOut=()=>{
 dispatch(actions.logoutUser());
@@ -18,7 +20,6 @@ dispatch(actions.logoutUser());
           <div className='log-reg-btn'>{
             loginData.length===1?(<>
               <span>Hello,{loginData[0].username}</span>
-              <i className='fa fa-user text-dark mr-2'></i>
               <button className="topButton" onClick={singOut}>Logout</button>
              
             </>):(
@@ -29,7 +30,14 @@ dispatch(actions.logoutUser());
             )
           }
          
-          {/* <Link to="/login"> <i className='fa fa-user text-dark mr-2'></i></Link> */}
+          <Link to="/cart/123">
+            <button className="cart-btn">
+           
+            <i className="fa fa-light fa-heart cart-val-btn" ></i> 
+            <span className="cart-val">2</span>
+            </button>
+            </Link>
+          {/* <Link to="/favourite" className='fav-icon'><i className=" fa fa-heart-circle-plus"></i></Link> */}
          
           </div>
          

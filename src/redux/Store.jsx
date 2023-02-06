@@ -14,7 +14,7 @@ const movieSlice=createSlice({
             state.currentUser=[];
         },
         addFavourite:(state,action)=>{
-            state.favourite=action.payload;
+           state.favourite=state.favourite.push(action.payload);
         }
 
     },

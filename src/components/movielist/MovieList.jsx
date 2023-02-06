@@ -36,7 +36,7 @@ const MovieList = () => {
         <div className='list_cards'>
           {movieList.map((movie,index)=>{
             return(<>
-              <MovieCard movie={movie}/>
+              <MovieCard movie={movie} key={index}/>
              
             </>)
           })}
