@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { actions } from '../../redux/Store';
+
 import "./moviecard.css";
 
 const MovieCard = ({ movie }) => {
+    const navigate=useNavigate();
     const dispatch=useDispatch();
     const [isLoading, setIsLoading] = useState(true);
   //  console.log(movie);
@@ -13,7 +15,8 @@ const MovieCard = ({ movie }) => {
 const addToFav=()=>{
     
    if(movie){
-    dispatch(actions.addFavourite([movie]));
+    dispatch(actions.addFavourite(movie));
+    navigate("/");
     alert(`Added ${movie.original_title}`);
    }
   
@@ -27,6 +30,8 @@ const addToFav=()=>{
     }, [])
 
     return <>
+                       
+
         {
             isLoading
                 ?
@@ -49,10 +54,11 @@ const addToFav=()=>{
                             </div>
                             <div className="card__description">{movie ? movie.overview : ""}</div>
                         </div>
-                        <button  className='fav-icon'><i className=" fa  fa-heart-circle-plus" onClick={addToFav}></i></button>
+                        <button  className='fav-icon'  onClick={addToFav}><i className=" fa  fa-heart-circle-plus"></i></button>
                     </div>
                   
                 </Link>
+                
         }
     </>
 }

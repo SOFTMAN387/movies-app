@@ -20,7 +20,7 @@ const Login = () => {
 
     const handleClick=()=>{
         const data= JSON.parse(localStorage.getItem("userData3"));
-        console.log(data);
+        // console.log(data);
         if(data.email===loginData.email && data.password===loginData.password){
             dispatch(actions.loginUser([data]));
             alert("login Successful..");

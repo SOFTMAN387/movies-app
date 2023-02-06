@@ -64,10 +64,10 @@
 .fav-icon {
     font-size: 20px;
     color: rgba(240, 49, 49, 0.877);
+    border-radius: 50%;
 }
 
 .fav-icon:hover {
     color: red;
     background-color: white;
-    border-radius: 50%;
 }
