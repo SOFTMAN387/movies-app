@@ -1,4 +1,4 @@
-import React, { useEffect, useState,useCallback } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import Header from '../header/Header';
 import "./moviedtl.css";
@@ -6,30 +6,30 @@ const MovieDetails = () => {
     const [currentMovieDetail, setMovie] = useState([]);
     const id = useParams().id;
 
-    // const getData = () => {
+
+
+    useEffect(() => {
+        const getData = () => {
+            fetch(`https://api.themoviedb.org/3/movie/${id ? id : ""}?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US`)
+                .then(res => res.json())
+                .then(data => setMovie(data))
+        }
+        getData();
+        window.scrollTo(0, 0);
+
+    }, []);
+
+
+
+    // const getData = useCallback(() => {
     //     fetch(`https://api.themoviedb.org/3/movie/${id ? id : ""}?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US`)
     //         .then(res => res.json())
     //         .then(data => setMovie(data))
-    // }
+    // }, [/* Additional dependencies */])
 
-    // useEffect((getData=getData) => {
-
+    // useEffect(() => {
     //     getData();
-    //     window.scrollTo(0, 0);
-
-    // }, []);
-
-
-
-    const getData = useCallback(() => {
-        fetch(`https://api.themoviedb.org/3/movie/${id ? id : ""}?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US`)
-            .then(res => res.json())
-            .then(data => setMovie(data))
-    }, [/* Additional dependencies */])
-
-    useEffect(() => {
-        getData();
-    }, [getData]);
+    // }, [getData]);
 
 
 
