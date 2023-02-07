@@ -3,21 +3,22 @@ import { useParams } from 'react-router-dom';
 import Header from '../header/Header';
 import "./moviedtl.css";
 const MovieDetails = () => {
-    const [currentMovieDetail, setMovie] = useState()
-    const { id } = useParams()
+    const [currentMovieDetail, setMovie] = useState([]);
+    const id = useParams().id;
+
 
 
     useEffect(() => {
+
         getData();
 
     }, []);
 
     const getData = () => {
-        fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US`)
+        fetch(`https://api.themoviedb.org/3/movie/${id?id:""}?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US`)
             .then(res => res.json())
             .then(data => setMovie(data))
     }
-
 
 
     return (
@@ -34,7 +35,7 @@ const MovieDetails = () => {
                         </div>
                     </div>
                     <div className="movie__detailRight">
-                        <div className="movie__detailRightTop">
+                        <div className="movie__detailRightTop" key={currentMovieDetail.id}>
                             <div className="movie__name">{currentMovieDetail ? currentMovieDetail.original_title : ""}</div>
                             <div className="movie__tagline">{currentMovieDetail ? currentMovieDetail.tagline : ""}</div>
                             <div className="movie__rating">
