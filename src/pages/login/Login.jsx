@@ -20,7 +20,9 @@ const Login = () => {
 
     const handleClick=()=>{
         const data= JSON.parse(localStorage.getItem("userData3"));
+       
         // console.log(data);
+      
         if(data.email===loginData.email && data.password===loginData.password){
             dispatch(actions.loginUser([data]));
             alert("login Successful..");
@@ -43,13 +45,16 @@ const Login = () => {
                     name="email"
                     onChange={handleChange}
                     className="loginInput"
+                  
                 />
+                
                 <input
                     type="password"
                     placeholder="password"
                     name="password"
                     onChange={handleChange}
                     className="loginInput"
+                   
                 />
                 <button
                 //  disabled={loading} 
@@ -59,10 +64,11 @@ const Login = () => {
                 </button>
                 {/* {error && <span>{error.message}</span>} */}
                 {err===true ? <span style={{ color: "red" }}>Wrong Credentials !!...</span> : <span></span>}
+              
                 <div>
                 <br></br>
                 <hr/>
-                <h5>Don't have an account ?.</h5>
+                <h5 className='account-logreg'>Don't have an account ?.</h5>
                 <br/>
                 <Link to="/register">Register here !.</Link>
                 </div>

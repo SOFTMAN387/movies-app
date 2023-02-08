@@ -44,7 +44,7 @@ const AddFav = () => {
 
                 </div>
                 <hr></hr>
-                {(FavItems?.length === 0 )? (<h2>Empty</h2>) : FavItems?.map((items) => {
+                {(FavItems?.length === 0 )? (<h2 className="empty-div">Empty</h2>) : FavItems?.map((items) => {
 
                     return (<>
 

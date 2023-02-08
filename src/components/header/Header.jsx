@@ -31,16 +31,15 @@ const Header = () => {
             )
           }
 
-            <Link to="/favourite">
+
+          </div>
+          <Link to="/favourite">
               <button className="cart-btn">
 
                 <i className="fa fa-light fa-heart cart-val-btn" ></i>
                 <span className="cart-val">{favLen}</span>
               </button>
             </Link>
-            {/* <Link to="/favourite" className='fav-icon'><i className=" fa fa-heart-circle-plus"></i></Link> */}
-
-          </div>
 
         </div>
 
