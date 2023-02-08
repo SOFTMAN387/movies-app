@@ -27,6 +27,7 @@ const PopularMovie = () => {
             transitionTime={3}
             infiniteLoop={true}
             showStatus={false}>
+          
             {
                 popularMovies.map((movie,index)=>{
                     return(<>
